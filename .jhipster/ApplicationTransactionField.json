@@ -1,0 +1,40 @@
+{
+    "name": "ApplicationTransactionField",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "isIdentifier",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "filterValue",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "application",
+            "otherEntityName": "applicationTransaction",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "applicationOverride",
+            "otherEntityName": "flowApplicationSequence",
+            "otherEntityField": "appSequence"
+        }
+    ],
+    "changelogDate": "20180811131847",
+    "entityTableName": "application_transaction_field",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

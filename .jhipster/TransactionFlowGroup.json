@@ -1,0 +1,26 @@
+{
+    "name": "TransactionFlowGroup",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "flow",
+            "otherEntityName": "transactionFlow",
+            "otherEntityRelationshipName": "group"
+        }
+    ],
+    "changelogDate": "20180811131843",
+    "entityTableName": "transaction_flow_group",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
