@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="flowApplicationSequence">
+            <h2><span>Flow Application Sequence</span> {{flowApplicationSequence.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Sequence</span></dt>
+                <dd>
+                    <span>{{flowApplicationSequence.sequence}}</span>
+                </dd>
+                <dt><span>Flow</span></dt>
+                <dd>
+                    <div *ngIf="flowApplicationSequence.flow">
+                        <a [routerLink]="['/transaction-flow', flowApplicationSequence.flow?.id, 'view']">{{flowApplicationSequence.flow?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span>Application</span></dt>
+                <dd>
+                    <div *ngIf="flowApplicationSequence.application">
+                        <a [routerLink]="['/application-transaction', flowApplicationSequence.application?.id, 'view']">{{flowApplicationSequence.application?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/flow-application-sequence', flowApplicationSequence.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

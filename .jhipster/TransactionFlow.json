@@ -1,0 +1,40 @@
+{
+    "name": "TransactionFlow",
+    "fields": [
+        {
+            "fieldName": "lOB",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "flowCorrelationId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "application",
+            "otherEntityName": "flowApplicationSequence",
+            "otherEntityRelationshipName": "flow"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "group",
+            "otherEntityName": "transactionFlowGroup",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180811073759",
+    "entityTableName": "transaction_flow",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

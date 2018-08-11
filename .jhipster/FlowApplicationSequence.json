@@ -1,0 +1,38 @@
+{
+    "name": "FlowApplicationSequence",
+    "fields": [
+        {
+            "fieldName": "sequence",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "field",
+            "otherEntityName": "applicationTransactionField",
+            "otherEntityRelationshipName": "applicationOverride"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "flow",
+            "otherEntityName": "transactionFlow",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "application",
+            "otherEntityName": "applicationTransaction",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180811073801",
+    "entityTableName": "flow_application_sequence",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

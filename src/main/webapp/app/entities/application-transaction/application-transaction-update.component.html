@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-application-transaction-heading">Create or edit a Application Transaction</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!applicationTransaction.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="applicationTransaction.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="applicationTransaction.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_eventCount">Event Count</label>
+                    <input type="number" class="form-control" name="eventCount" id="field_eventCount"
+                        [(ngModel)]="applicationTransaction.eventCount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_eventRepositoryType">Event Repository Type</label>
+                    <select class="form-control" name="eventRepositoryType" [(ngModel)]="applicationTransaction.eventRepositoryType" id="field_eventRepositoryType" >
+                        <option value="DP">DP</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_repositoryEventName">Repository Event Name</label>
+                    <input type="text" class="form-control" name="repositoryEventName" id="field_repositoryEventName"
+                        [(ngModel)]="applicationTransaction.repositoryEventName" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
