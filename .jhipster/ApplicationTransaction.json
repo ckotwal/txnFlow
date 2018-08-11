@@ -1,0 +1,45 @@
+{
+    "name": "ApplicationTransaction",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eventCount",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "eventRepositoryType",
+            "fieldType": "EventRepositoryType",
+            "fieldValues": "DP"
+        },
+        {
+            "fieldName": "repositoryEventName",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "flow",
+            "otherEntityName": "flowApplicationSequence",
+            "otherEntityRelationshipName": "application"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "field",
+            "otherEntityName": "applicationTransactionField",
+            "otherEntityRelationshipName": "application"
+        }
+    ],
+    "changelogDate": "20180811131845",
+    "entityTableName": "application_transaction",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

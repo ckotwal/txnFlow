@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="transactionFlow">
+            <h2><span>Transaction Flow</span> {{transactionFlow.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>L OB</span></dt>
+                <dd>
+                    <span>{{transactionFlow.lOB}}</span>
+                </dd>
+                <dt><span>Name</span></dt>
+                <dd>
+                    <span>{{transactionFlow.name}}</span>
+                </dd>
+                <dt><span>Flow Correlation Id</span></dt>
+                <dd>
+                    <span>{{transactionFlow.flowCorrelationId}}</span>
+                </dd>
+                <dt><span>Group</span></dt>
+                <dd>
+                    <div *ngIf="transactionFlow.group">
+                        <a [routerLink]="['/transaction-flow-group', transactionFlow.group?.id, 'view']">{{transactionFlow.group?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/transaction-flow', transactionFlow.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
