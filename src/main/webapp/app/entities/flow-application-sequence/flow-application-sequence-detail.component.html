@@ -5,10 +5,7 @@
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span>App Sequence</span></dt>
-                <dd>
-                    <span>{{flowApplicationSequence.appSequence}}</span>
-                </dd>
+
                 <dt><span>Flow</span></dt>
                 <dd>
                     <div *ngIf="flowApplicationSequence.flow">
@@ -20,6 +17,10 @@
                     <div *ngIf="flowApplicationSequence.application">
                         <a [routerLink]="['/application-transaction', flowApplicationSequence.application?.id, 'view']">{{flowApplicationSequence.application?.name}}</a>
                     </div>
+                </dd>
+                <dt><span>App Sequence</span></dt>
+                <dd>
+                    <span>{{flowApplicationSequence.appSequence}}</span>
                 </dd>
             </dl>
 

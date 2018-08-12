@@ -15,16 +15,15 @@
             <thead>
             <tr>
             <th><span>ID</span></th>
-            <th><span>App Sequence</span></th>
             <th><span>Flow</span></th>
             <th><span>Application</span></th>
+                <th><span>App Sequence</span></th>
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let flowApplicationSequence of flowApplicationSequences ;trackBy: trackId">
                 <td><a [routerLink]="['/flow-application-sequence', flowApplicationSequence.id, 'view' ]">{{flowApplicationSequence.id}}</a></td>
-                <td>{{flowApplicationSequence.appSequence}}</td>
                 <td>
                     <div *ngIf="flowApplicationSequence.flow">
                         <a [routerLink]="['../transaction-flow', flowApplicationSequence.flow?.id, 'view' ]" >{{flowApplicationSequence.flow?.name}}</a>
@@ -35,6 +34,7 @@
                         <a [routerLink]="['../application-transaction', flowApplicationSequence.application?.id, 'view' ]" >{{flowApplicationSequence.application?.name}}</a>
                     </div>
                 </td>
+                <td>{{flowApplicationSequence.appSequence}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"
